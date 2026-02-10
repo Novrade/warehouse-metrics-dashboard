@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>LOE Dashboard</title>
+  <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/styles.css}" />
+<script>
+    setInterval(function() {
+        location.reload();
+    },33000);
+  </script>
+</head>
+<body>
+<div class="dashboard-container">
+  <!-- Header -->
+  <header>
+    <h1 class="title">LOE Dashboard <span id="timedate" th:text="${#dates.format(#dates.createNow(),'dd-MM-YYYY')}"></span></h1>
+  </header>
+  <!-- Dashboard Metrics -->
+  <div class="dashboard-metrics">
+    <div class="child card">
+      <h2 th:text="'LDDs: ' + ${ldd}"></h2>
+    </div>
+    <div class="child card">
+      <h2 th:text="'RELEASE PROBLEMS: ' + ${release}"></h2>
+    </div>
+    <div class="child card">
+      <h2 th:text="'WIP: ' + ${wip}"></h2>
+    </div>
+    <div class="child card">
+      <h2 th:text="'P2P PICKS: ' + ${p2p}"></h2>
+    </div>
+    <div class="child card">
+      <h2 th:text="'DBH PICKS: ' + ${dbhpicks}"></h2>
+    </div>
+    <div class="child card">
+      <h2 th:text="'DBH FILL LEVEL: ' + ${dbh} + '%'"></h2>
+    </div>
+    <div class="child card">
+      <h2 th:text="'EPB FILL LEVEL: ' + ${epb} + '%'"></h2>
+    </div>
+    <div class="child card">
+      <h2 th:text="'OSR1 FILL LEVEL: ' + ${osr1} + '%'"></h2>
+    </div>
+    <div class="child card">
+      <h2 th:text="'OSR2 FILL LEVEL: ' + ${osr2} + '%'"></h2>
+    </div>
+  </div>
+
+  <!-- Tables Section -->
+  <div class="tables-container">
+    <div class="child card">
+      <h2 th:text="'TRANSPORTERS DOWN: ' + ${transporters.size()}"></h2>
+      <table>
+        <thead>
+        <tr>
+          <th>NAME</th>
+          <th>STATE</th>
+          <th>POSITION</th>
+          <th>OSR ID</th>
+          <th>TODAY'S ORDERS</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="transporter : ${transporters}">
+          <td th:text="${transporter.getTransporter_name()}"></td>
+          <td th:text="${transporter.getTransporter_state()}"></td>
+          <td th:text="${transporter.getOsr()}"></td>
+          <td th:text="${transporter.getTransporter_position()}"></td>
+          <td th:text="${transporter.getToday_orders()}"></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="child card">
+      <h2 th:text="'LIFTS DOWN: ' + ${lifts.size()}"></h2>
+      <table>
+        <thead>
+        <tr>
+          <th>NAME</th>
+          <th>OSR ID</th>
+          <th>Aisle</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="lift : ${lifts}">
+          <td th:text="${lift.getName()}"></td>
+          <td th:text="${lift.getOsr()}"></td>
+          <td th:text="${lift.getAisle()}"></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="child card">
+      <h2 th:text="'PB LANES IN ERROR: ' + ${lanes.size()}"></h2>
+      <table>
+        <thead>
+        <tr>
+          <th>NAME</th>
+          <th>UNIT ID</th>
+          <th>FILL LVL</th>
+          <th>PLC STATE</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="lane :${lanes}">
+          <td th:text="${lane.getName()}"></td>
+          <td th:text="${lane.getUnitId()}"></td>
+          <td th:text="${lane.getFill()}"></td>
+          <td th:text="${lane.getState()}"></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="child card">
+      <h2 th:text="'LDDs in DBH > 30 minutes: ' + ${lddsdbh.size()}"></h2>
+      <table>
+        <thead>
+        <tr>
+          <th>UNIT ID</th>
+          <th>NAME</th>
+          <th>LDDs</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="ldddbh :${lddsdbh}">
+          <td th:text="${ldddbh.getUnitId()}"></td>
+          <td th:text="${ldddbh.getName()}"></td>
+          <td th:text="${ldddbh.getLDDsInLane()}"></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
+</body>
+</html>
