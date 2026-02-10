@@ -114,7 +114,7 @@
       </table>
     </div>
     <div class="child card">
-      <h2 th:text="'LDDs in DBH > 30 minutes: ' + ${lddsdbh.size()}"></h2>
+      <h2 th:text="'LDDs in DBH > 30 minutes: ' + ${dbhLdds.size()}"></h2>
       <table>
         <thead>
         <tr>
@@ -124,10 +124,10 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="ldddbh :${lddsdbh}">
-          <td th:text="${ldddbh.getUnitId()}"></td>
-          <td th:text="${ldddbh.getName()}"></td>
-          <td th:text="${ldddbh.getLDDsInLane()}"></td>
+        <tr th:each="dbhLdds :${dbhLdds}">
+          <td th:text="${dbhLdds.getUnitId()}"></td>
+          <td th:text="${dbhLdds.getName()}"></td>
+          <td th:text="${dbhLdds.getLDDsInLane()}"></td>
         </tr>
         </tbody>
       </table>

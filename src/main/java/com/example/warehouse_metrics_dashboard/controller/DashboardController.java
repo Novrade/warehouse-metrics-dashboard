@@ -2,15 +2,16 @@ package com.example.warehouse_metrics_dashboard.controller;
 
 import com.example.warehouse_metrics_dashboard.service.DashboardService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-@org.springframework.stereotype.Controller
+@Controller
 public class DashboardController {
 
     private final DashboardService dashboardService;
 
-    @Autowired
+
     public DashboardController(DashboardService dashboardService) {
         this.dashboardService = dashboardService;
     }
@@ -31,12 +32,7 @@ public class DashboardController {
         model.addAttribute("lifts", dashboardService.getLiftsDown());
         model.addAttribute("dbhLdds", dashboardService.getLDDsDBH());
 
-        return "home";
-    }
-
-    @GetMapping("/login")
-    public String loginPage() {
-        return "login";
+        return "homes";
     }
 }
 
