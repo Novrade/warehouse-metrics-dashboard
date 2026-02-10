@@ -1,15 +1,15 @@
-package com.example.warehouse_metrics_dashboard.service;
+package com.example.warehouse_metrics_dashboard.repository;
 
 import com.example.warehouse_metrics_dashboard.dto.DbhLaneDTO;
 import com.example.warehouse_metrics_dashboard.dto.LiftDTO;
-import com.example.warehouse_metrics_dashboard.dto.TransporterDTO;
 import com.example.warehouse_metrics_dashboard.dto.PbLaneDTO;
+import com.example.warehouse_metrics_dashboard.dto.TransporterDTO;
 
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
-public interface DashboardService {
+public interface DashboardRepository {
 
     String getLDDs();
     String getArea1FillLevel();
@@ -25,3 +25,4 @@ public interface DashboardService {
     List<TransporterDTO> getTransportersDown();
     List<LiftDTO> getLiftsDown();
 }
+
