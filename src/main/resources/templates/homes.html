@@ -19,31 +19,31 @@
   <!-- Dashboard Metrics -->
   <div class="dashboard-metrics">
     <div class="child card">
-      <h2 th:text="'LDDs: ' + ${ldd}"></h2>
+      <h2 th:text="'LDDs: ' + ${lddCount}"></h2>
     </div>
     <div class="child card">
-      <h2 th:text="'RELEASE PROBLEMS: ' + ${release}"></h2>
+      <h2 th:text="'RELEASE PROBLEMS: ' + ${releaseIssues}"></h2>
     </div>
     <div class="child card">
       <h2 th:text="'WIP: ' + ${wip}"></h2>
     </div>
     <div class="child card">
-      <h2 th:text="'P2P PICKS: ' + ${p2p}"></h2>
+      <h2 th:text="'P2P PICKS: ' + ${p2pPicks}"></h2>
     </div>
     <div class="child card">
-      <h2 th:text="'DBH PICKS: ' + ${dbhpicks}"></h2>
+      <h2 th:text="'DBH PICKS: ' + ${bufferpicks}"></h2>
     </div>
     <div class="child card">
-      <h2 th:text="'DBH FILL LEVEL: ' + ${dbh} + '%'"></h2>
+      <h2 th:text="'DBH FILL LEVEL: ' + ${area1FillLevel} + '%'"></h2>
     </div>
     <div class="child card">
-      <h2 th:text="'EPB FILL LEVEL: ' + ${epb} + '%'"></h2>
+      <h2 th:text="'EPB FILL LEVEL: ' + ${area2FillLevel} + '%'"></h2>
     </div>
     <div class="child card">
-      <h2 th:text="'OSR1 FILL LEVEL: ' + ${osr1} + '%'"></h2>
+      <h2 th:text="'OSR1 FILL LEVEL: ' + ${area3FillPercent} + '%'"></h2>
     </div>
     <div class="child card">
-      <h2 th:text="'OSR2 FILL LEVEL: ' + ${osr2} + '%'"></h2>
+      <h2 th:text="'OSR2 FILL LEVEL: ' + ${area4FillPercent} + '%'"></h2>
     </div>
   </div>
 
