@@ -1,6 +1,7 @@
 package com.example.warehouse_metrics_dashboard.controller;
 
 import com.example.warehouse_metrics_dashboard.service.DashboardService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
