@@ -11,8 +11,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
@@ -47,7 +45,7 @@ public class DashboardServiceTest {
         Mockito.when(dashboardRepository.getArea1FillLevel()).thenReturn("101");
         String result = dashboardService.getArea1FillLevel();
 
-        assertEquals(result,"101");
+        assertEquals("101", result);
         Mockito.verify(dashboardRepository).getArea1FillLevel();
     }
 
@@ -56,7 +54,7 @@ public class DashboardServiceTest {
         Mockito.when(dashboardRepository.getArea2FillLevel()).thenReturn("101");
         String result = dashboardService.getArea2FillLevel();
 
-        assertEquals(result,"101");
+        assertEquals("101", result);
         Mockito.verify(dashboardRepository).getArea2FillLevel();
     }
 
@@ -65,7 +63,7 @@ public class DashboardServiceTest {
         Mockito.when(dashboardRepository.getArea3FillLevel()).thenReturn("101");
         String result = dashboardService.getArea3FillLevel();
 
-        assertEquals(result,"101");
+        assertEquals("101", result);
         Mockito.verify(dashboardRepository).getArea3FillLevel();
     }
 
@@ -74,7 +72,7 @@ public class DashboardServiceTest {
         Mockito.when(dashboardRepository.getArea4FillLevel()).thenReturn("101");
         String result = dashboardService.getArea4FillLevel();
 
-        assertEquals(result,"101");
+        assertEquals("101", result);
         Mockito.verify(dashboardRepository).getArea4FillLevel();
     }
 
@@ -83,7 +81,7 @@ public class DashboardServiceTest {
         Mockito.when(dashboardRepository.getWip()).thenReturn("101");
         String result = dashboardService.getWip();
 
-        assertEquals("101",result);
+        assertEquals("101", result);
 
         Mockito.verify(dashboardRepository).getWip();
     }
